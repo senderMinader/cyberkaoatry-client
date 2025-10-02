@@ -4,6 +4,14 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use "@angular/material" as mat;
+@use 'styles/_theme.scss' as mytheme;
+// Import des fonctions Bootstrap
+@use "bootstrap/scss/functions";
+
+@use "bootstrap/scss/bootstrap-grid";
+
+// Variables redefinis
+@use "styles/_overrides.scss";
 
 html {
   @include mat.theme(
@@ -12,7 +20,7 @@ html {
         primary: mat.$azure-palette,
         tertiary: mat.$blue-palette,
       ),
-      typography: Roboto,
+      typography: mytheme.$customtypo,
       density: 0,
     )
   );
@@ -27,9 +35,13 @@ body {
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
+  // background-color: var(--mat-sys-surface);
+  // color: var(--mat-sys-on-surface);
+  background-color: mytheme.$background-color;
+  color: mytheme.$text-primary;
+  // font: var(--mat-sys-body-medium);
+  font-family: mytheme.$font-family;
+
 
   // Reset the user agent margin.
   margin: 0;
@@ -40,7 +52,45 @@ html,
 body {
   height: 100%;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+:root {
+  --soairay-blue-dark: #{mytheme.$soairay-blue-dark};
+  --soairay-light-blue: #{mytheme.$soairay-light-blue};
+  --soairay-light-surface: #{mytheme.$soairay-light-surface};
+  --mat-form-field-filled-container-color: #{mytheme.$surface-color};
+  @include mat.table-overrides((
+    background-color: mytheme.$surface-color,
+    header-headline-color: mytheme.$text-secondary,
+    header-headline-font: 'Inter',
+    row-item-outline-width: 0px,
+    header-headline-weight: 'normal',
+  ));
+
+  @include mat.icon-button-overrides((
+    icon-color: mytheme.$text-secondary,
+  ));
+
+  @include mat.paginator-overrides((
+    container-background-color: mytheme.$surface-color,
+  ));
+
+  @include mat.form-field-overrides((
+    filled-active-indicator-height: 0px,
+    filled-focus-active-indicator-height: 0px,
+    container-text-size: mytheme.$font-size,
+    hover-state-layer-opacity: 8%,
+    filled-container-shape: mytheme.$card-border-radius,
+    state-layer-color: mytheme.$soairay-blue-dark
+  ));
 }
+
+.mdc-text-field.mdc-text-field--filled {
+  border-bottom-left-radius: mytheme.$card-border-radius;
+  border-bottom-right-radius: mytheme.$card-border-radius;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+
