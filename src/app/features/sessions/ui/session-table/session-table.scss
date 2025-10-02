@@ -1,0 +1,11 @@
+// TODO: REPORTER DANS LE THEME si PLUSIEURS CAS D'UTILISATION
+.mat-column-startTime:not(.mat-mdc-header-cell), .mat-column-endTime:not(.mat-mdc-header-cell), .mat-column-duration:not(.mat-mdc-header-cell), .mat-column-amount:not(.mat-mdc-header-cell) {
+  max-width: 200px;
+  color: var(--soairay-blue-dark);
+  font-weight: bold;
+}
+
+.highlighted {
+  font-weight: bold;
+  color: var(--soairay-blue-dark);
+}

@@ -1,20 +1,19 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+
   {
     path: '',
-    redirectTo: 'session',
-    pathMatch: 'full',
-  },
-  {
-    path: 'session',
-    loadChildren: () =>
-      import('@features/sessions/sessions.routes').then(
-        (m) => m.SESSION_ROUTES,
+    loadChildren: () => 
+      import('@layout/main-layout.routes').then(
+        (m) => m.routes,
       ),
   },
   {
     path: '**',
-    redirectTo: 'session',
+    loadComponent: () =>
+      import('@features/errors/not-found/not-found').then(
+        (m) => m.NotFound,
+      ),
   },
 ];

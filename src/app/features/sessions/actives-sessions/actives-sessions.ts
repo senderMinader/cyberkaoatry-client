@@ -19,7 +19,6 @@ export class ActivesSessions {
       macAdress: '00:1A:2B:3C:4D:5E',
       device: 'Laptop',
       isStudent: true,
-      sessionId: 'sess1',
       ipAddress: 'x.x',
       startTime: new Date(),
       duration: 60,
@@ -35,13 +34,27 @@ export class ActivesSessions {
       macAdress: '00:1A:2B:3C:4D:5E',
       device: 'Laptop',
       isStudent: true,
-      sessionId: 'sess1',
       ipAddress: 'x.x',
       startTime: new Date(),
       duration: 60,
       dataUsed: 1.0,
       amount: 10,
     },
+    {
+      _id: '2',
+      pseudo: 'User',
+      totalSessions: 8,
+      totalDuration: 178,
+      totalDataUsed: 90,
+      macAdress: '00:1A:2B:3C:4D:5E',
+      device: 'Google pixel 3',
+      isStudent: false,
+      ipAddress: 'x.x',
+      startTime: new Date(),
+      duration: 78,
+      dataUsed: 1.0,
+      amount: 1000,
+    }
   ];
 
   COLUMNS: string[] = [
@@ -51,5 +64,18 @@ export class ActivesSessions {
     'endTime',
     'duration',
     'amount',
+    'actions',
   ];
+
+  handleDelete(sessionId: string) {
+    console.log('Delete session with ID:', sessionId);
+    this.SESSIONS = this.SESSIONS.filter(
+      (session) => session._id !== sessionId,
+    );
+  }
+
+  handleStop(sessionId: string) {
+    console.log('Stop session with ID:', sessionId);
+    // Implement stop logic here
+  }
 }

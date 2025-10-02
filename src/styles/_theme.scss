@@ -1,0 +1,100 @@
+@use '@angular/material' as mat;
+// =============================
+// 🎨 Palettes Material
+// =============================
+
+// Primary (bleu-gris foncé pour texte et éléments principaux)
+$my-primary: mat.m2-define-palette((
+  500: #2E3646,
+  700: #1E242F,
+  100: #A1A7B3,
+  contrast: (
+    500: white,
+    700: white,
+    100: black,
+  )
+));
+
+// Secondary (accent orange pour highlights, boutons)
+$my-secondary: mat.m2-define-palette((
+  500: #FF6B2C,
+  700: #E85A1F,
+  100: #FFD6C2,
+  contrast: (
+    500: white,
+    700: white,
+    100: black,
+  )
+));
+
+// Warn (jaune doux)
+$my-warn: mat.m2-define-palette((
+  500: #FFC107,
+  700: #FFB300,
+  100: #FFF9C4,
+  contrast: (
+    500: black,
+    700: black,
+    100: black,
+  )
+));
+
+// =============================
+// 🌫️ Couleurs additionnelles
+// =============================
+$background-color: #F5F7FB;
+$surface-color: rgba(255, 255, 255, 0.8);
+$surface-border: rgba(255, 255, 255, 0.3);
+$shadow-color: rgba(0, 0, 0, 0.05);
+
+$text-primary: #2E3646;
+$text-secondary: #6B7280;
+$soairay-light-surface: #eef4ed;
+$soairay-blue-dark: #0b2545;
+$soairay-light-blue: #8da9c4;
+$primary: #2563eb; // bleu
+$secondary: #64748b; // gris neutre
+$success: #22c55e;
+$danger: #ef4444;
+$warning: #f59e0b;
+$light: #f9fafb;
+$dark: #111827;
+$grey-font-color:  #1f2937;
+
+// Radius & ombres
+$border-radius: 1rem;
+$card-border-radius: $border-radius;
+$btn-border-radius: 0.75rem;
+
+$box-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+$font-family : 'Manrope', 'Inter', 'Roboto', 'Arial', 'sans-serif';
+
+// =============================
+// 🖌️ Définition du thème
+// =============================
+// $my-theme: mat.define-theme((
+//   color: (
+//     theme-type: light,
+//     primary: $my-primary,
+//     tertiary: $my-secondary, 
+//   ),
+//   typography: mat.define-typography((
+//     plain-family: Manrope,
+//     brand-family: Inter,
+//     bold-weight: 800,
+//     medium-weight: 500,
+//     regular-weight: 400,
+//   )),
+//   density: 0,
+// ));
+
+$customtypo: mat.define-typography((
+    plain-family: 'Manrope',
+    brand-family: 'Inter',
+    bold-weight: 800,
+    medium-weight: 500,
+    regular-weight: 400,
+  )); 
+
+$font-size: 14px;

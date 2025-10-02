@@ -1,0 +1,60 @@
+@use '_theme' as *;
+// Cards
+.card {
+  border: none;
+  border-radius: $card-border-radius;
+  box-shadow: $box-shadow-soft;
+  background-color: $surface-color;
+  padding: 1rem;
+}
+
+// Boutons
+.btn {
+  border-radius: $btn-border-radius;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: $box-shadow-soft;
+  }
+
+  &-primary {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+// Inputs
+.form-control {
+  border-radius: $btn-border-radius;
+  border: 1px solid $secondary;
+  padding: 0.6rem 0.9rem;
+  box-shadow: none;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.2);
+  }
+}
+
+// Tables
+.table {
+  border-radius: $card-border-radius;
+  overflow: hidden;
+  // background-color: white;
+  box-shadow: $box-shadow-soft;
+
+  thead {
+    background-color: $light;
+    font-weight: 600;
+  }
+
+  tbody tr {
+    transition: background 0.2s;
+    &:hover {
+      background-color: rgba($primary, 0.05);
+    }
+  }
+}

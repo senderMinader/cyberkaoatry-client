@@ -11,7 +11,6 @@ export interface Customer {
 }
 
 export interface Session extends Customer {
-  sessionId: string;
   ipAddress: string;
   startTime: Date;
   endTime?: Date;
