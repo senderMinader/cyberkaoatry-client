@@ -24,7 +24,7 @@ import { SearchBar } from '@shared/components/search-bar/search-bar';
     MatSortModule,
     MatButtonModule,
     MatInputModule,
-    SearchBar
+    SearchBar,
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorCustomIntl }],
   templateUrl: './session-table.html',

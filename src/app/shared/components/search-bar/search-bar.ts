@@ -8,14 +8,18 @@ import { MatInputModule } from '@angular/material/input';
   selector: 'app-search-bar',
   imports: [MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule],
   templateUrl: './search-bar.html',
-  styleUrl: './search-bar.scss'
+  styleUrl: './search-bar.scss',
 })
 export class SearchBar {
   // TO DO : Use input stream to add debounce time
   keyword = output<string>();
-  placeholder = input<string>('Rechercher par Pseudo, Appareil ou Heure de début ');
+  placeholder = input<string>(
+    'Rechercher par Pseudo, Appareil ou Heure de début ',
+  );
 
   onSearch() {
-    this.keyword.emit((document.querySelector('input') as HTMLInputElement).value);
+    this.keyword.emit(
+      (document.querySelector('input') as HTMLInputElement).value,
+    );
   }
 }

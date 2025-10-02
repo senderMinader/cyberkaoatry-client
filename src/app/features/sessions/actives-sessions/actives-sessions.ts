@@ -54,7 +54,7 @@ export class ActivesSessions {
       duration: 78,
       dataUsed: 1.0,
       amount: 1000,
-    }
+    },
   ];
 
   COLUMNS: string[] = [

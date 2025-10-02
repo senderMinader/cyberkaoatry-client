@@ -17,7 +17,7 @@ export const routes: Routes = [
           import('@features/sessions/sessions.routes').then(
             (m) => m.SESSION_ROUTES,
           ),
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
