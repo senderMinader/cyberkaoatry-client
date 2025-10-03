@@ -1,0 +1,16 @@
+<ng-container>
+  <div class="flex-row align-items-center justify-content-center">
+    <div class="px-3">
+      <h3 class="">Liste des sessions actives</h3>
+    </div>
+    <div class="pe-5">
+      <app-session-table
+        [sessionList]="SESSIONS"
+        [displayedColumns]="COLUMNS"
+        (deletedSession)="handleDelete($event)"
+        (stoppedSession)="handleStop($event)"
+      >
+      </app-session-table>
+    </div>
+  </div>
+</ng-container>
