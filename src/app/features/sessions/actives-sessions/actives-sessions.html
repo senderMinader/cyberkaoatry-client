@@ -1,7 +1,7 @@
 <ng-container>
   <div class="flex-row align-items-center justify-content-center">
     <div class="px-3">
-      <h3 class="">Liste des sessions actives</h3>
+      <h3 class="">Liste des sessions {{ sessionStatus() }}</h3>
     </div>
     <div class="pe-5">
       <app-session-table
@@ -9,6 +9,7 @@
         [displayedColumns]="COLUMNS"
         (deletedSession)="handleDelete($event)"
         (stoppedSession)="handleStop($event)"
+        (currentFilter)="handleFilter($event)"
       >
       </app-session-table>
     </div>
