@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
+import { FilterValueEnum } from '@core/enums/filters';
 import { Session } from '@core/interfaces/customers';
+import { TableFilter } from '@core/interfaces/filters';
 import { SessionTable } from '@features/sessions/ui/session-table/session-table';
 
 @Component({
@@ -67,6 +69,16 @@ export class ActivesSessions {
     'actions',
   ];
 
+  private _sessionStatus = signal<TableFilter>({
+    label: 'Actives',
+    value: FilterValueEnum.ACTIVE,
+  }); // TO DO: refactor to store
+  readonly sessionStatus = computed(() =>
+    this._sessionStatus().value === FilterValueEnum.ALL
+      ? ''
+      : this._sessionStatus().label.toLowerCase(),
+  );
+
   handleDelete(sessionId: string) {
     console.log('Delete session with ID:', sessionId);
     this.SESSIONS = this.SESSIONS.filter(
@@ -77,5 +89,11 @@ export class ActivesSessions {
   handleStop(sessionId: string) {
     console.log('Stop session with ID:', sessionId);
     // Implement stop logic here
+  }
+
+  handleFilter(filter: TableFilter) {
+    console.log('Filter changed:', filter);
+    // Implement filter logic here
+    this._sessionStatus.set(filter);
   }
 }

@@ -82,6 +82,18 @@ body {
     filled-container-shape: mytheme.$card-border-radius,
     state-layer-color: mytheme.$soairay-blue-dark
   ));
+
+  @include mat.chips-overrides((
+    container-shape-radius: mytheme.$btn-border-radius,
+    outline-width: 0px,
+    elevated-selected-container-color: mytheme.$soairay-blue-dark,
+    selected-focus-state-layer-color: mytheme.$soairay-blue-dark,
+    elevated-container-color: mytheme.$soairay-light-blue,
+    selected-focus-state-layer-opacity: 100%,
+    selected-label-text-color: mytheme.$light,
+    with-icon-selected-icon-color: mytheme.$light,
+    label-text-color: mytheme.$light,
+  ));
 }
 
 .mdc-text-field.mdc-text-field--filled {

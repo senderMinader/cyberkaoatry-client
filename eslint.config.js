@@ -34,7 +34,12 @@ module.exports = tseslint.config(
       ],
       "quotes": ["error", "single"],
       "semi": ["error", "always"],
-      "no-unused-vars": "warn",
+      "no-unused-vars": [
+        "warn",
+        {
+          varsIgnorePattern: '^[A-Z0-9_]+$',
+        }
+      ],
       "no-console": "warn"
     },
   },
