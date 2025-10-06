@@ -13,6 +13,9 @@ import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { SearchBar } from '@shared/components/search-bar/search-bar';
+import { FiltreRapide } from '@shared/components/filtre-rapide/filtre-rapide';
+import { TableFilter } from '@core/interfaces/filters';
+import { FilterValueEnum } from '@core/enums/filters';
 
 @Component({
   selector: 'app-session-table',
@@ -25,6 +28,7 @@ import { SearchBar } from '@shared/components/search-bar/search-bar';
     MatButtonModule,
     MatInputModule,
     SearchBar,
+    FiltreRapide,
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorCustomIntl }],
   templateUrl: './session-table.html',
@@ -38,10 +42,17 @@ export class SessionTable {
   stoppedSession = output<string>();
   pageChange = output<PageEvent>();
   sortChange = output<Sort>();
+  currentFilter = output<TableFilter>();
 
   sortedField = signal<string>('');
 
+  readonly FILTERVALUES = FilterValueEnum;
   readonly totalCount = computed(() => this.sessionList().length);
+  readonly filters: TableFilter[] = [
+    { label: 'Actives', value: FilterValueEnum.ACTIVE },
+    { label: 'Terminées', value: FilterValueEnum.STOPPED },
+    { label: 'Toutes les sessions', value: FilterValueEnum.ALL },
+  ];
 
   onDelete(session: Session) {
     console.log(session);
@@ -66,5 +77,10 @@ export class SessionTable {
 
   onSearch(keyword: string) {
     console.log('searching...', keyword);
+  }
+
+  onFilterChange(filter: TableFilter) {
+    console.log('filtering...', filter);
+    this.currentFilter.emit(filter);
   }
 }

@@ -1,4 +1,13 @@
 <div class="d-flex align-items-center p-3">
+  <app-filtre-rapide
+    class="width-100"
+    [filtersArray]="filters"
+    [defaultFilter]="FILTERVALUES.ACTIVE"
+    (filterChange)="onFilterChange($event)"
+  ></app-filtre-rapide>
+</div>
+
+<div class="d-flex align-items-center p-3">
   <app-search-bar
     class="width-100"
     (keyword)="onSearch($event)"
