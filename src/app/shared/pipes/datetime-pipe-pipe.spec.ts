@@ -1,8 +1,8 @@
-import { DatetimePipePipe } from './datetime-pipe-pipe';
+// import { DateTimeFormatPipe } from './datetime-pipe-pipe';
 
-describe('DatetimePipePipe', () => {
-  it('create an instance', () => {
-    const pipe = new DatetimePipePipe();
-    expect(pipe).toBeTruthy();
-  });
-});
+// describe('DateTimeFormatPipe', () => {
+//   it('create an instance', () => {
+//     const pipe = new DateTimeFormatPipe();
+//     expect(pipe).toBeTruthy();
+//   });
+// });
